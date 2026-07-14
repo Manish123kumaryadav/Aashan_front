@@ -1,0 +1,2 @@
+import { Link, useLocation } from 'react-router-dom';
+export default function OrderSuccessPage() { const { state } = useLocation(); return <section className="order-success panel"><div>✓</div><span>PAYMENT SUCCESSFUL</span><h1>Your order is confirmed!</h1><p>{state?.orders?.length || ''} order item(s) have been placed and are ready for tracking.</p><div><Link to="/orders">View Orders</Link><Link className="secondary" to="/">Continue Shopping</Link></div></section>; }
