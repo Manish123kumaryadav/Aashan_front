@@ -116,4 +116,11 @@ export const orderService = {
   async track(id) { const response = await request(`/orders/${id}/track`); return response.data; },
 };
 
-export { request };
+export const chatService = {
+  async openForListing(listingId) { const response = await request(`/chat/listings/${listingId}`, { method: 'POST' }); return response.data; },
+  async conversations() { const response = await request('/chat/conversations'); return response.data || []; },
+  async messages(conversationId) { const response = await request(`/chat/conversations/${conversationId}/messages`); return response.data || []; },
+  async send(conversationId, text) { const response = await request(`/chat/conversations/${conversationId}/messages`, { method: 'POST', body: { text } }); return response.data; },
+};
+
+export { API_BASE_URL, request };

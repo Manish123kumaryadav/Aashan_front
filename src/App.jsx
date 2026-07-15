@@ -15,6 +15,7 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrdersPage from './pages/OrdersPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
+import ChatPage from './pages/ChatPage';
 
 export default function App() {
   return <Routes>
@@ -26,7 +27,7 @@ export default function App() {
       <Route path="orders" element={<ProtectedRoute><OrdersPage /></ProtectedRoute>} />
       <Route path="order-success" element={<ProtectedRoute><OrderSuccessPage /></ProtectedRoute>} />
       <Route path="post" element={<SectionPage title="Post an ad" description="Create a listing and reach buyers near you." />} />
-      <Route path="chat" element={<SectionPage title="Messages" description="Your buyer and seller conversations will appear here." />} />
+      <Route path="chat" element={<ProtectedRoute><ChatPage /></ProtectedRoute>} />
       <Route path="plans" element={<SectionPage title="Subscription plans" description="Unlock seller contacts and premium benefits." />} />
       <Route path="login" element={<AuthPage mode="login" />} />
       <Route path="register" element={<AuthPage mode="register" />} />
